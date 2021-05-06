@@ -1,0 +1,4 @@
+SELECT Name AS Category,  COUNT(*) AS Products FROM Categories, Products
+WHERE Products.CategoryId = Categories.CategoryId
+OR Categories.CategoryId NOT IN (SELECT CategoryId FROM Products)
+GROUP BY Name
